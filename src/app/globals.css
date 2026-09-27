@@ -616,7 +616,7 @@ h1, h2, h3 {
   .treatment-item { grid-template-columns: 3rem minmax(12rem, 0.7fr) 1fr auto; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 850px) {
   .site-header { min-height: 5.5rem; }
   .header-brand { width: 7.5rem; }
   .brand-mark img { width: 22rem; }
