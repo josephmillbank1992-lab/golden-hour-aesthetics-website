@@ -80,7 +80,7 @@ h1, h2, h3 {
   position: relative;
   display: block;
   width: 100%;
-  height: 3.4rem;
+  height: 5rem;
   overflow: hidden;
 }
 
@@ -88,10 +88,15 @@ h1, h2, h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 26rem;
+  width: 18.8rem;
   max-width: none;
   height: auto;
+  mix-blend-mode: multiply;
   transform: translate(-50%, -49%);
+}
+
+.brand-mark--light img {
+  mix-blend-mode: normal;
 }
 
 .main-navigation { display: flex; gap: clamp(1.2rem, 2.5vw, 2.5rem); }
@@ -619,7 +624,8 @@ h1, h2, h3 {
 @media (max-width: 850px) {
   .site-header { min-height: 5.5rem; }
   .header-brand { width: 7.5rem; }
-  .brand-mark img { width: 22rem; }
+  .header-brand .brand-mark { height: 4rem; }
+  .header-brand .brand-mark img { width: 15rem; }
   .header-booking { min-width: 7.8rem; gap: 1rem; }
 
   .hero {
