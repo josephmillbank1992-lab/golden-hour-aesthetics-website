@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { DM_Mono, Manrope } from "next/font/google";
 
 import "./globals.css";
 
-const displayFont = Cormorant_Garamond({
+const displayFont = Manrope({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const bodyFont = Inter({
+const bodyFont = DM_Mono({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {

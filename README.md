@@ -89,14 +89,15 @@ When adding a photo, keep a descriptive `alt` value unless the image is purely d
 Brand colours are CSS variables at the top of `src/app/globals.css`:
 
 ```css
---ink: #302b27;
---taupe: #a29479;
---taupe-dark: #6f6253;
---cream: #f5f0e8;
---ivory: #fcfaf6;
+--ink: #241722;
+--aubergine: #4b203b;
+--wine: #6d2748;
+--amber: #f4a43b;
+--gold: #ffc45d;
+--paper: #fff9ef;
 ```
 
-The heading and body fonts are configured in `src/app/layout.tsx`. The current combination uses Cormorant Garamond for editorial headings and Inter for accessible body copy.
+The heading and body fonts are configured in `src/app/layout.tsx`. The current combination uses Manrope for bold graphic typography and DM Mono for the precise, clinical supporting copy.
 
 ### SEO details
 
@@ -129,9 +130,7 @@ src/
 │   ├── robots.ts        Search crawler configuration
 │   └── sitemap.ts       Sitemap generation
 ├── components/
-│   ├── button-link.tsx  Reusable call-to-action link
-│   ├── section-heading.tsx
-│   └── site-header.tsx
+│   └── button-link.tsx  Reusable call-to-action link
 └── content/
     ├── site-config.ts   Environment-based external links
     └── site-content.ts  Reusable business and treatment content
