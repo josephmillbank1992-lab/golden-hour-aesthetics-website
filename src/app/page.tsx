@@ -15,6 +15,25 @@ const externalLinkProps = {
   rel: "noreferrer",
 };
 
+const resultPlaceholders = [
+  { number: "01", label: "Natural enhancement", tone: "stone" },
+  { number: "02", label: "Skin quality", tone: "blush" },
+];
+
+function BrandMark({ light = false }: { light?: boolean }) {
+  return (
+    <span className={`brand-mark ${light ? "brand-mark--light" : ""}`}>
+      <Image
+        src={light ? "/images/golden-hour-logo-reverse.png" : "/images/golden-hour-logo.png"}
+        alt="Golden Hour Aesthetics"
+        width={1080}
+        height={1350}
+        priority
+      />
+    </span>
+  );
+}
+
 export default function HomePage() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -35,179 +54,119 @@ export default function HomePage() {
 
   return (
     <>
-      <a className="skip-link" href="#main-content">
-        Skip to main content
-      </a>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Golden Hour Aesthetics home">
-          <span className="brand-logo">
-            <Image
-              src="/images/golden-hour-logo.png"
-              alt=""
-              width={400}
-              height={500}
-              priority
-            />
-          </span>
-          <span className="brand-copy">
-            Golden Hour
-            <small>Aesthetics by Jess</small>
-          </span>
+        <a className="header-brand" href="#top" aria-label="Golden Hour Aesthetics home">
+          <BrandMark />
         </a>
 
         <nav className="main-navigation" aria-label="Main navigation">
           {navigationItems.map((item) => (
-            <a href={item.href} key={item.href}>
-              {item.label}
-            </a>
+            <a href={item.href} key={item.href}>{item.label}</a>
           ))}
         </nav>
 
-        <a className="nav-booking" href={siteConfig.booking.url}>
-          {siteConfig.booking.isConfigured ? "Book" : "Enquire"}
+        <a className="header-booking" href={siteConfig.booking.url}>
+          {siteConfig.booking.isConfigured ? "Book online" : "Enquire"}
           <span aria-hidden="true">↗</span>
         </a>
       </header>
 
       <main id="main-content">
         <section className="hero" id="top">
-          <div className="hero-grid" aria-hidden="true" />
-          <div className="hero-sun" aria-hidden="true">
-            <span className="sun-ring sun-ring--one" />
-            <span className="sun-ring sun-ring--two" />
-            <span className="sun-core" />
+          <div className="hero-kicker">
+            <span>Darley Abbey, Derby</span>
+            <span>Est. 2023</span>
           </div>
 
-          <p className="hero-location">Darley Abbey · Derby</p>
-          <p className="hero-index">Est. 2023 / 52.94°N</p>
-
           <div className="hero-copy">
-            <p className="overline">Ethical aesthetics. Precisely personal.</p>
-            <h1>
-              Subtle work.
-              <span>Warmly done.</span>
-            </h1>
+            <p className="eyebrow">Natural results, thoughtfully considered.</p>
+            <h1>Feel like yourself.<em>Only fresher.</em></h1>
             <p className="hero-summary">
-              Evidence-led aesthetic treatments shaped around your face, your
-              comfort and your version of natural.
+              Ethical, evidence-based aesthetic treatments delivered with honest
+              advice, a gentle approach and your safety at the centre.
             </p>
-
             <div className="hero-actions">
-              <ButtonLink href={siteConfig.booking.url}>
-                {siteConfig.booking.label}
-              </ButtonLink>
-              <a className="quiet-link" href="#treatments">
-                View treatment index <span aria-hidden="true">↓</span>
+              <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
+              <a className="text-link" href="#treatments">
+                Explore treatments <span aria-hidden="true">↓</span>
               </a>
             </div>
-
             {!siteConfig.booking.isConfigured ? (
-              <p className="booking-note">
-                Online booking is being prepared. Email enquiries are open.
-              </p>
+              <p className="booking-note">Online booking is being prepared. Email enquiries are open.</p>
             ) : null}
           </div>
 
-          <div className="hero-stamp" aria-label="Golden Hour Aesthetics">
-            <Image
-              src="/images/golden-hour-logo.png"
-              alt="Golden Hour Aesthetics"
-              width={400}
-              height={500}
-              priority
-            />
-          </div>
+          <aside className="hero-note" aria-label="Golden Hour approach">
+            <span className="hero-note-number">01</span>
+            <p>No pressure.<br />No over-treatment.<br />Just considered care.</p>
+          </aside>
 
-          <div className="hero-footer">
-            <span>Dermal fillers</span>
-            <span>Botulinum toxin</span>
-            <span>Skin boosters</span>
-            <span>Polynucleotides</span>
+          <div className="hero-treatments" aria-label="Available treatments">
+            {treatments.map((treatment) => (
+              <span key={treatment.name}>{treatment.name}</span>
+            ))}
           </div>
         </section>
 
-        <section className="opening-statement" aria-labelledby="statement-title">
-          <div className="statement-label">
-            <span>01</span>
-            <p>The Golden Hour approach</p>
+        <section className="introduction" aria-labelledby="introduction-title">
+          <div className="section-label"><span>01</span><p>The Golden Hour approach</p></div>
+          <div className="introduction-heading">
+            <p className="eyebrow">A calm space for honest conversations.</p>
+            <h2 id="introduction-title">Listen first.<br />Treat <em>lightly.</em></h2>
           </div>
-
-          <div className="statement-copy">
-            <p className="overline">Good treatment begins before the treatment.</p>
-            <h2 id="statement-title">
-              Listen closely.
-              <br />
-              Plan carefully.
-              <br />
-              <em>Change lightly.</em>
-            </h2>
-          </div>
-
-          <div className="statement-detail">
+          <div className="introduction-copy">
             <p>
               Jess combines more than a decade in physical and mental healthcare
               with specialist aesthetics training and a clear preference for
               natural, balanced outcomes.
             </p>
             <p>
-              You will receive honest advice, a plan shaped around you and the
-              space to make an informed decision without pressure.
+              Every appointment starts with listening. You will receive clear
+              advice, a personalised plan and the space to make an informed choice
+              without pressure.
             </p>
           </div>
         </section>
 
-        <section className="treatment-section" id="treatments">
-          <div className="section-intro">
-            <div>
-              <span>02</span>
-              <p>Treatment index</p>
-            </div>
-            <h2>
-              Four routes.
-              <br />
-              One considered approach.
-            </h2>
+        <section className="treatments-section" id="treatments">
+          <div className="treatments-heading">
+            <div className="section-label section-label--light"><span>02</span><p>Treatments</p></div>
+            <h2>Considered treatments.<br />Never a template.</h2>
             <p>
-              Suitability and treatment options are discussed in consultation.
-              Prices, deposits and availability will live in the booking platform.
+              Suitability and options are discussed in consultation. Prices,
+              deposits and availability remain in the booking platform.
             </p>
           </div>
 
-          <div className="treatment-index">
+          <div className="treatment-list">
             {treatments.map((treatment) => (
-              <article className="treatment-row" key={treatment.name}>
-                <span className="treatment-number">{treatment.number}</span>
+              <article className="treatment-item" key={treatment.name}>
+                <span>{treatment.number}</span>
                 <h3>{treatment.name}</h3>
                 <p>{treatment.description}</p>
                 <a href={siteConfig.booking.url} aria-label={`Enquire about ${treatment.name}`}>
-                  <span>Enquire</span>
-                  <span aria-hidden="true">↗</span>
+                  Enquire <span aria-hidden="true">↗</span>
                 </a>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="profile-section" id="about">
-          <div className="profile-sidebar">
-            <p className="profile-vertical">Meet the practitioner</p>
-            <div className="profile-swatch" aria-hidden="true">
-              <span>J</span>
+        <section className="about-section" id="about">
+          <div className="about-card" aria-label="Portrait placeholder for Jess">
+            <div className="portrait-placeholder">
+              <span>Portrait of Jess</span>
+              <small>Approved photography to be added</small>
             </div>
+            <p>Founder · Aesthetic practitioner</p>
           </div>
 
-          <div className="profile-copy">
-            <div className="section-tag">
-              <span>03</span>
-              <p>Jess / Founder</p>
-            </div>
-            <h2>
-              Clear thinking.
-              <br />
-              Calm energy.
-            </h2>
-            <div className="profile-columns">
+          <div className="about-copy">
+            <div className="section-label"><span>03</span><p>Meet Jess</p></div>
+            <h2>Care is the<br />starting point.</h2>
+            <div className="about-body">
               <p>
                 I’m Jess, founder of Golden Hour Aesthetics. I have more than 10
                 years’ experience across physical and mental healthcare and I’m
@@ -215,83 +174,54 @@ export default function HomePage() {
                 University of Derby.
               </p>
               <p>
-                I began training in aesthetics around three years ago. Since then,
-                I’ve continued through specialist training, conferences and ongoing
-                professional development. If a treatment is not right for you, I’ll
-                always say so.
+                I began training in aesthetics around three years ago and have
+                continued through specialist training, conferences and ongoing
+                professional development. If a treatment is not right for you, I
+                will always say so.
               </p>
             </div>
-            <p className="profile-signoff">Jess — Golden Hour Aesthetics</p>
+            <p className="signature">Jess</p>
           </div>
 
-          <div className="profile-data" aria-label="Jess's experience">
-            <div>
-              <strong>10+</strong>
-              <span>years in healthcare</span>
-            </div>
-            <div>
-              <strong>3</strong>
-              <span>years in aesthetics</span>
-            </div>
-            <div>
-              <strong>BSc</strong>
-              <span>Adult Nursing in progress</span>
-            </div>
-          </div>
+          <dl className="experience-list">
+            <div><dt>Healthcare experience</dt><dd>10+ years</dd></div>
+            <div><dt>Aesthetics experience</dt><dd>Around 3 years</dd></div>
+            <div><dt>Current study</dt><dd>BSc (Hons) Adult Nursing</dd></div>
+          </dl>
         </section>
 
-        <section className="principles-section">
-          <div className="principles-orbit" aria-hidden="true">
-            <span className="orbit orbit--outer" />
-            <span className="orbit orbit--inner" />
-            <span className="orbit-dot orbit-dot--one" />
-            <span className="orbit-dot orbit-dot--two" />
-            <p>GH</p>
+        <section className="principles-section" aria-labelledby="principles-title">
+          <div className="principles-heading">
+            <div className="section-label"><span>04</span><p>Why Golden Hour</p></div>
+            <h2 id="principles-title">Quiet confidence,<br />built on care.</h2>
           </div>
-
-          <div className="principles-copy">
-            <div className="section-tag">
-              <span>04</span>
-              <p>The constants</p>
-            </div>
-            <h2>What never changes.</h2>
-            <div className="principle-list">
-              {reasons.map((reason) => (
-                <article key={reason.title}>
-                  <h3>{reason.title}</h3>
-                  <p>{reason.description}</p>
-                </article>
-              ))}
-            </div>
+          <div className="principles-list">
+            {reasons.map((reason, index) => (
+              <article key={reason.title}>
+                <span>0{index + 1}</span>
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 
         <section className="results-section" id="results">
           <div className="results-heading">
-            <div className="section-tag">
-              <span>05</span>
-              <p>Results log</p>
-            </div>
-            <h2>Subtle enough to feel like you.</h2>
+            <div className="section-label"><span>05</span><p>Results</p></div>
+            <h2>Subtle enough<br />to still feel like you.</h2>
             <p>
               Approved treatment photography will be added with client consent.
               Individual results vary and suitability is assessed in consultation.
             </p>
           </div>
 
-          <div className="results-reel">
-            {["Dermal filler study", "Skin quality study"].map((label, index) => (
-              <article className="result-frame" key={label}>
-                <div className={`result-visual result-visual--${index + 1}`}>
-                  <span className="result-side">Before</span>
-                  <span className="result-divider" />
-                  <span className="result-side">After</span>
-                  <span className="result-light" />
-                </div>
-                <div className="result-caption">
-                  <span>Study 0{index + 1}</span>
-                  <p>{label}</p>
-                  <span>Imagery pending</span>
+          <div className="result-grid">
+            {resultPlaceholders.map((result) => (
+              <article className={`result-card result-card--${result.tone}`} key={result.number}>
+                <div className="result-image-placeholder"><span>Before</span><span>After</span></div>
+                <div className="result-meta">
+                  <span>{result.number}</span><p>{result.label}</p><span>Imagery pending</span>
                 </div>
               </article>
             ))}
@@ -299,31 +229,27 @@ export default function HomePage() {
         </section>
 
         <section className="reviews-section" id="reviews">
-          <div className="review-title">
-            <div className="section-tag">
-              <span>06</span>
-              <p>Client notes</p>
+          <div className="reviews-heading">
+            <div className="section-label"><span>06</span><p>Client words</p></div>
+            <h2>Warmly recommended.</h2>
+            <div className="review-actions">
+              {siteConfig.reviews.readUrl ? (
+                <ButtonLink href={siteConfig.reviews.readUrl} variant="outline" {...externalLinkProps}>
+                  Read Google reviews
+                </ButtonLink>
+              ) : null}
+              {siteConfig.reviews.leaveUrl ? (
+                <a className="text-link" href={siteConfig.reviews.leaveUrl} {...externalLinkProps}>
+                  Leave a review <span aria-hidden="true">↗</span>
+                </a>
+              ) : null}
             </div>
-            <h2>
-              How care
-              <br />
-              should feel.
-            </h2>
-            {siteConfig.reviews.readUrl ? (
-              <ButtonLink
-                href={siteConfig.reviews.readUrl}
-                variant="outline"
-                {...externalLinkProps}
-              >
-                Read Google reviews
-              </ButtonLink>
-            ) : null}
           </div>
 
-          <div className="review-notes">
+          <div className="review-list">
             {reviewPlaceholders.map((review, index) => (
-              <figure className={`review-note review-note--${index + 1}`} key={review.quote}>
-                <span className="note-number">0{index + 1}</span>
+              <figure key={review.quote}>
+                <span>0{index + 1}</span>
                 <blockquote>“{review.quote}”</blockquote>
                 <figcaption>{review.label}</figcaption>
               </figure>
@@ -332,88 +258,43 @@ export default function HomePage() {
         </section>
 
         <section className="visit-section" id="visit">
-          <div className="visit-map" aria-label="Abstract map showing the clinic in Darley Abbey">
-            <span className="map-line map-line--one" />
-            <span className="map-line map-line--two" />
-            <span className="map-line map-line--three" />
-            <span className="map-point">GH</span>
-            <p>52.9414° N / 1.4849° W</p>
-          </div>
-
+          <div className="visit-panel"><BrandMark light /><p>By appointment in Darley Abbey</p></div>
           <div className="visit-copy">
-            <div className="section-tag">
-              <span>07</span>
-              <p>Find the clinic</p>
-            </div>
-            <h2>
-              Darley Abbey,
-              <br />
-              Derby.
-            </h2>
+            <div className="section-label"><span>07</span><p>Visit the clinic</p></div>
+            <h2>A private setting<br />in Darley Abbey.</h2>
             <address>
-              {businessDetails.addressLines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
+              {businessDetails.addressLines.map((line) => <span key={line}>{line}</span>)}
             </address>
-            <ButtonLink
-              href={businessDetails.mapUrl}
-              variant="outline"
-              {...externalLinkProps}
-            >
-              Open map
+            <ButtonLink href={businessDetails.mapUrl} variant="outline" {...externalLinkProps}>
+              Open in Google Maps
             </ButtonLink>
           </div>
         </section>
 
         <section className="closing-section">
-          <p className="overline">A considered first step</p>
-          <h2>
-            Start with
-            <br />
-            a conversation.
-          </h2>
-          <ButtonLink href={siteConfig.booking.url}>
-            {siteConfig.booking.label}
-          </ButtonLink>
-          <p>
-            No pressure. No one-size-fits-all plan.
-            <br />
-            Just clear advice about what is right for you.
-          </p>
+          <p className="eyebrow">Ready when you are.</p>
+          <h2>Start with a<br /><em>conversation.</em></h2>
+          <p>No pressure and no one-size-fits-all plan. Just clear advice about what is right for you.</p>
+          <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
         </section>
       </main>
 
       <footer className="site-footer">
-        <div className="footer-wordmark">
-          <span>Golden</span>
-          <span>Hour</span>
+        <BrandMark light />
+        <div className="footer-contact">
+          <p>Contact</p>
+          <a href={businessDetails.phoneLink}>{businessDetails.phoneDisplay}</a>
+          <a href={`mailto:${businessDetails.email}`}>{businessDetails.email}</a>
         </div>
-
-        <div className="footer-details">
-          <div>
-            <p>Contact</p>
-            <a href={businessDetails.phoneLink}>{businessDetails.phoneDisplay}</a>
-            <a href={`mailto:${businessDetails.email}`}>{businessDetails.email}</a>
-          </div>
-          <div>
-            <p>Social</p>
-            {siteConfig.social.instagramUrl ? (
-              <a href={siteConfig.social.instagramUrl} {...externalLinkProps}>
-                Instagram ↗
-              </a>
-            ) : (
-              <span>Instagram</span>
-            )}
-            {siteConfig.social.facebookUrl ? (
-              <a href={siteConfig.social.facebookUrl} {...externalLinkProps}>
-                Facebook ↗
-              </a>
-            ) : (
-              <span>Facebook</span>
-            )}
-          </div>
+        <div className="footer-social">
+          <p>Follow</p>
+          {siteConfig.social.instagramUrl ? (
+            <a href={siteConfig.social.instagramUrl} {...externalLinkProps}>Instagram ↗</a>
+          ) : <span>Instagram</span>}
+          {siteConfig.social.facebookUrl ? (
+            <a href={siteConfig.social.facebookUrl} {...externalLinkProps}>Facebook ↗</a>
+          ) : <span>Facebook</span>}
         </div>
-
         <div className="footer-legal">
           <p>© {new Date().getFullYear()} Golden Hour Aesthetics by Jess.</p>
           <p>All treatments are subject to consultation and suitability.</p>

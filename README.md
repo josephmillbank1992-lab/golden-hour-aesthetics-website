@@ -78,7 +78,8 @@ Longer page sections, including the introduction and Jess’s biography, are in 
 
 Website images live in `public/images`.
 
-- `public/images/golden-hour-logo.png` is the current Canva logo reference.
+- `public/images/golden-hour-logo.png` is the dark Canva logo export.
+- `public/images/golden-hour-logo-reverse.png` is the white-on-taupe Canva logo export.
 - The “Meet Jess” area is intentionally a styled placeholder. Replace the placeholder inside the `about` section in `src/app/page.tsx` with an approved portrait using Next.js `Image`.
 - The before-and-after cards are styled placeholders. Replace them only with approved client photography and recorded consent.
 
@@ -89,15 +90,15 @@ When adding a photo, keep a descriptive `alt` value unless the image is purely d
 Brand colours are CSS variables at the top of `src/app/globals.css`:
 
 ```css
---ink: #241722;
---aubergine: #4b203b;
---wine: #6d2748;
---amber: #f4a43b;
---gold: #ffc45d;
---paper: #fff9ef;
+--ink: #2e2926;
+--paper: #f8f5ef;
+--ivory: #fffdf9;
+--blush: #e8d8d1;
+--rose: #ccb2a8;
+--taupe: #9d8f75;
 ```
 
-The heading and body fonts are configured in `src/app/layout.tsx`. The current combination uses Manrope for bold graphic typography and DM Mono for the precise, clinical supporting copy.
+The heading and body fonts are configured in `src/app/layout.tsx`. The current combination uses Italiana for editorial headings and Manrope for clean, highly readable supporting copy.
 
 ### SEO details
 

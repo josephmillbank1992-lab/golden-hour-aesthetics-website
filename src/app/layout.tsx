@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { DM_Mono, Manrope } from "next/font/google";
+import { Italiana, Manrope } from "next/font/google";
 
 import "./globals.css";
 
-const displayFont = Manrope({
+const displayFont = Italiana({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
+  weight: "400",
 });
 
-const bodyFont = DM_Mono({
+const bodyFont = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
