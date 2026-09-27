@@ -79,6 +79,7 @@ Longer page sections, including the introduction and Jess’s biography, are in 
 Website images live in `public/images`.
 
 - `public/images/golden-hour-logo.png` is the dark Canva logo export.
+- `public/images/golden-hour-logo-transparent.png` is the tightly cropped transparent header logo.
 - `public/images/golden-hour-logo-reverse.png` is the white-on-taupe Canva logo export.
 - The “Meet Jess” area is intentionally a styled placeholder. Replace the placeholder inside the `about` section in `src/app/page.tsx` with an approved portrait using Next.js `Image`.
 - The before-and-after cards are styled placeholders. Replace them only with approved client photography and recorded consent.

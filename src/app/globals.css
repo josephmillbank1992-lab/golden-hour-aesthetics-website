@@ -80,7 +80,7 @@ h1, h2, h3 {
   position: relative;
   display: block;
   width: 100%;
-  height: 5rem;
+  height: 5.5rem;
   overflow: hidden;
 }
 
@@ -88,15 +88,10 @@ h1, h2, h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18.8rem;
+  width: 7.2rem;
   max-width: none;
   height: auto;
-  mix-blend-mode: multiply;
   transform: translate(-50%, -49%);
-}
-
-.brand-mark--light img {
-  mix-blend-mode: normal;
 }
 
 .main-navigation { display: flex; gap: clamp(1.2rem, 2.5vw, 2.5rem); }
@@ -169,8 +164,8 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.3fr);
   grid-template-rows: auto 1fr auto;
-  min-height: 100svh;
-  padding: 9rem var(--page-padding) 0;
+  min-height: min(43rem, 88svh);
+  padding: 8rem var(--page-padding) 0;
   background:
     linear-gradient(90deg, transparent 0 68%, rgba(204, 178, 168, 0.16) 68% 100%),
     var(--paper);
@@ -194,17 +189,17 @@ h1, h2, h3 {
 }
 
 .hero-copy {
-  align-self: center;
+  align-self: start;
   max-width: 68rem;
-  padding: 5rem clamp(2rem, 8vw, 9rem) 5rem 0;
+  padding: 2.5rem clamp(2rem, 7vw, 7rem) 2.75rem 0;
 }
 
 .hero-copy .eyebrow { margin-bottom: 2.25rem; }
 
 .hero h1 {
   max-width: 12ch;
-  margin-bottom: 2.5rem;
-  font-size: clamp(4.4rem, 9vw, 10rem);
+  margin-bottom: 1.75rem;
+  font-size: clamp(3.3rem, 5.2vw, 5.6rem);
 }
 
 .hero h1 em,
@@ -217,7 +212,7 @@ h1, h2, h3 {
 
 .hero-summary {
   max-width: 37rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.4vw, 1.25rem);
 }
@@ -235,14 +230,14 @@ h1, h2, h3 {
 .booking-note { margin-top: 1.25rem; color: var(--ink-soft); }
 
 .hero-note {
-  align-self: end;
-  margin-bottom: 5rem;
+  align-self: center;
+  margin-bottom: 0;
   padding-left: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 .hero-note-number {
   display: block;
-  margin-bottom: 6rem;
+  margin-bottom: 1.5rem;
   color: var(--rose);
   font-family: var(--font-display), Georgia, serif;
   font-size: 4rem;
@@ -272,7 +267,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 0.45fr 1.1fr 0.7fr;
   gap: clamp(2rem, 6vw, 7rem);
-  padding: clamp(7rem, 13vw, 13rem) var(--page-padding);
+  padding: clamp(4.5rem, 8vw, 7rem) var(--page-padding);
   background: var(--ivory);
 }
 
@@ -289,7 +284,7 @@ h1, h2, h3 {
 .visit-copy h2,
 .closing-section h2 {
   margin-bottom: 0;
-  font-size: clamp(3.6rem, 7vw, 7.5rem);
+  font-size: clamp(3rem, 5.3vw, 5.5rem);
 }
 
 .introduction-heading h2 em { color: var(--rose); font-style: italic; }
@@ -297,7 +292,7 @@ h1, h2, h3 {
 .introduction-copy p:last-child { margin-bottom: 0; }
 
 .treatments-section {
-  padding: clamp(6rem, 10vw, 10rem) var(--page-padding);
+  padding: clamp(4.5rem, 7vw, 7rem) var(--page-padding);
   background: var(--ink);
   color: var(--ivory);
 }
@@ -307,7 +302,7 @@ h1, h2, h3 {
   grid-template-columns: 0.4fr 1fr 0.6fr;
   gap: clamp(2rem, 5vw, 6rem);
   align-items: end;
-  margin-bottom: clamp(4rem, 8vw, 8rem);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
 }
 
 .treatments-heading > p {
@@ -323,7 +318,7 @@ h1, h2, h3 {
   grid-template-columns: 4rem minmax(15rem, 0.8fr) minmax(15rem, 1fr) auto;
   gap: clamp(1.5rem, 4vw, 5rem);
   align-items: center;
-  min-height: 11rem;
+  min-height: 8.5rem;
   border-bottom: 1px solid var(--line-light);
 }
 
@@ -334,14 +329,14 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-.treatment-item h3 { margin: 0; font-size: clamp(2.3rem, 4.5vw, 5rem); }
+.treatment-item h3 { margin: 0; font-size: clamp(2rem, 3.2vw, 3.5rem); }
 .treatment-item p { margin: 0; color: rgba(255, 253, 249, 0.64); font-size: 0.88rem; }
 .treatment-item > a { display: flex; gap: 1rem; text-decoration: none; }
 
 .about-section {
   display: grid;
   grid-template-columns: minmax(18rem, 0.75fr) minmax(0, 1.15fr) minmax(14rem, 0.55fr);
-  min-height: 55rem;
+  min-height: 44rem;
   background: var(--blush);
 }
 
@@ -359,7 +354,7 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 36rem;
+  min-height: 28rem;
   background: linear-gradient(150deg, rgba(255, 253, 249, 0.2), rgba(46, 41, 38, 0.08)), var(--stone);
   color: var(--ink-soft);
   text-align: center;
@@ -380,10 +375,10 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(4rem, 8vw, 8rem) var(--page-padding);
+  padding: clamp(3.5rem, 6vw, 6rem) var(--page-padding);
 }
 
-.about-copy h2 { margin: 3rem 0; }
+.about-copy h2 { margin: 2rem 0; }
 
 .about-body {
   display: grid;
@@ -418,19 +413,19 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: clamp(3rem, 8vw, 9rem);
-  padding: clamp(7rem, 12vw, 12rem) var(--page-padding);
+  padding: clamp(4.5rem, 8vw, 7rem) var(--page-padding);
   background: var(--paper);
 }
 
 .principles-heading { position: sticky; top: 3rem; align-self: start; }
-.principles-heading h2 { margin-top: 3rem; }
+.principles-heading h2 { margin-top: 2rem; }
 .principles-list { border-top: 1px solid var(--line); }
 
 .principles-list article {
   display: grid;
   grid-template-columns: 3rem minmax(12rem, 0.7fr) 1fr;
   gap: 2rem;
-  padding: 2.5rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -438,20 +433,20 @@ h1, h2, h3 {
 .principles-list h3 { margin: 0; font-size: 1.8rem; }
 .principles-list p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
 
-.results-section { padding: clamp(6rem, 11vw, 11rem) var(--page-padding); background: var(--ivory); }
+.results-section { padding: clamp(4.5rem, 8vw, 7rem) var(--page-padding); background: var(--ivory); }
 
 .results-heading {
   display: grid;
   grid-template-columns: 0.4fr 1fr 0.6fr;
   gap: clamp(2rem, 5vw, 6rem);
   align-items: end;
-  margin-bottom: 5rem;
+  margin-bottom: 3.5rem;
 }
 
 .results-heading > p { margin: 0; color: var(--ink-soft); font-size: 0.86rem; }
 .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .result-card { padding: 0.8rem; border: 1px solid var(--line); background: var(--paper); }
-.result-image-placeholder { display: grid; grid-template-columns: repeat(2, 1fr); min-height: 34rem; background: var(--stone); }
+.result-image-placeholder { display: grid; grid-template-columns: repeat(2, 1fr); min-height: 26rem; background: var(--stone); }
 .result-card--blush .result-image-placeholder { background: var(--blush); }
 
 .result-image-placeholder span {
@@ -481,18 +476,18 @@ h1, h2, h3 {
 .result-meta p { margin: 0; text-align: center; }
 .result-meta span:last-child { text-align: right; }
 
-.reviews-section { display: grid; grid-template-columns: 0.75fr 1.25fr; min-height: 52rem; background: var(--blush); }
+.reviews-section { display: grid; grid-template-columns: 0.75fr 1.25fr; min-height: 42rem; background: var(--blush); }
 
 .reviews-heading {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(4rem, 8vw, 8rem) var(--page-padding);
+  padding: clamp(3.5rem, 6vw, 6rem) var(--page-padding);
   border-right: 1px solid var(--line);
 }
 
-.reviews-heading h2 { margin: 3rem 0; }
+.reviews-heading h2 { margin: 2rem 0; }
 .review-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
 .review-list { display: flex; flex-direction: column; justify-content: center; padding: 3rem var(--page-padding); }
 
@@ -502,7 +497,7 @@ h1, h2, h3 {
   gap: 2rem;
   align-items: start;
   margin: 0;
-  padding: 2.4rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -511,7 +506,7 @@ h1, h2, h3 {
 .review-list blockquote { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: clamp(1.5rem, 2.5vw, 2.5rem); line-height: 1.2; }
 .review-list figcaption { color: var(--ink-soft); }
 
-.visit-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 48rem; }
+.visit-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 38rem; }
 
 .visit-panel {
   display: flex;
@@ -532,11 +527,11 @@ h1, h2, h3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(4rem, 8vw, 8rem) var(--page-padding);
+  padding: clamp(3.5rem, 6vw, 6rem) var(--page-padding);
   background: var(--paper);
 }
 
-.visit-copy h2 { margin: 3rem 0 2rem; }
+.visit-copy h2 { margin: 2rem 0 1.5rem; }
 .visit-copy address { display: flex; flex-direction: column; margin-bottom: 2rem; color: var(--ink-soft); font-style: normal; }
 
 .closing-section {
@@ -544,7 +539,7 @@ h1, h2, h3 {
   grid-template-columns: 0.45fr 1.2fr 0.55fr;
   gap: clamp(2rem, 6vw, 7rem);
   align-items: end;
-  padding: clamp(8rem, 13vw, 13rem) var(--page-padding);
+  padding: clamp(5rem, 8vw, 8rem) var(--page-padding);
   background: var(--ivory);
 }
 
@@ -624,22 +619,22 @@ h1, h2, h3 {
 @media (max-width: 850px) {
   .site-header { min-height: 5.5rem; }
   .header-brand { width: 7.5rem; }
-  .header-brand .brand-mark { height: 4rem; }
-  .header-brand .brand-mark img { width: 15rem; }
+  .header-brand .brand-mark { height: 4.2rem; }
+  .header-brand .brand-mark img { width: 5.5rem; }
   .header-booking { min-width: 7.8rem; gap: 1rem; }
 
   .hero {
     display: flex;
     flex-direction: column;
     min-height: auto;
-    padding-top: 7.5rem;
+    padding-top: 6.5rem;
     background: var(--paper);
   }
 
   .hero::before { display: none; }
-  .hero-kicker { padding-bottom: 3rem; }
-  .hero-copy { padding: 3rem 0 4rem; }
-  .hero h1 { font-size: clamp(4.2rem, 20vw, 6rem); }
+  .hero-kicker { padding-bottom: 1.5rem; }
+  .hero-copy { padding: 2.25rem 0 3rem; }
+  .hero h1 { font-size: clamp(3.1rem, 9vw, 4rem); }
   .hero-actions { align-items: flex-start; flex-direction: column; }
 
   .hero-note {
@@ -670,15 +665,15 @@ h1, h2, h3 {
   .results-heading h2,
   .reviews-heading h2,
   .visit-copy h2,
-  .closing-section h2 { font-size: clamp(3.3rem, 16vw, 5rem); }
+  .closing-section h2 { font-size: clamp(2.9rem, 10vw, 4.2rem); }
 
-  .treatment-item { grid-template-columns: 2.5rem 1fr auto; gap: 1rem; padding: 2rem 0; }
-  .treatment-item h3 { font-size: 2.3rem; }
+  .treatment-item { grid-template-columns: 2.5rem 1fr auto; gap: 1rem; padding: 1.5rem 0; }
+  .treatment-item h3 { font-size: 2rem; }
   .treatment-item p { grid-column: 2 / -1; }
   .treatment-item > a { grid-column: 3; grid-row: 1; }
   .about-section { grid-template-columns: 1fr; }
   .about-card { border-right: 0; border-bottom: 1px solid var(--line); }
-  .portrait-placeholder { min-height: 27rem; }
+  .portrait-placeholder { min-height: 22rem; }
   .about-body { grid-template-columns: 1fr; }
   .experience-list { flex-direction: column; }
   .experience-list div { min-height: 9rem; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -691,11 +686,11 @@ h1, h2, h3 {
   .principles-list article { grid-template-columns: 2rem 1fr; }
   .principles-list p { grid-column: 2; }
   .result-grid { grid-template-columns: 1fr; }
-  .result-image-placeholder { min-height: 24rem; }
+  .result-image-placeholder { min-height: 20rem; }
   .reviews-heading { border-right: 0; border-bottom: 1px solid var(--line); }
   .review-list figure { grid-template-columns: 2rem 1fr; }
   .review-list figcaption { grid-column: 2; }
-  .visit-panel { min-height: 30rem; }
+  .visit-panel { min-height: 24rem; }
   .site-footer { grid-template-columns: 1fr; }
   .footer-legal { flex-direction: column; }
 }

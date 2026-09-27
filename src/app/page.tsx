@@ -21,13 +21,25 @@ const resultPlaceholders = [
 ];
 
 function BrandMark({ light = false }: { light?: boolean }) {
+  const logo = light
+    ? {
+        src: "/images/golden-hour-logo-reverse.png",
+        width: 1080,
+        height: 1350,
+      }
+    : {
+        src: "/images/golden-hour-logo-transparent.png",
+        width: 448,
+        height: 339,
+      };
+
   return (
     <span className={`brand-mark ${light ? "brand-mark--light" : ""}`}>
       <Image
-        src={light ? "/images/golden-hour-logo-reverse.png" : "/images/golden-hour-logo.png"}
+        src={logo.src}
         alt="Golden Hour Aesthetics"
-        width={1080}
-        height={1350}
+        width={logo.width}
+        height={logo.height}
         priority
       />
     </span>
