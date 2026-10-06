@@ -1,10 +1,10 @@
 # Golden Hour Aesthetics: launch and search audit
 
-Reviewed 6 October 2026 against all 20 items in the supplied image. Base commit: `be3fd51ff376ce9bd5b9241d195e78500eb201f8`. Sage and Glow is excluded; all ten explicitly listed repositories are included. These are source changes prepared for review, not a claim that production has changed.
+Reviewed 6 October 2026 against all 20 items in the supplied image. Base commit: `be3fd51ff376ce9bd5b9241d195e78500eb201f8`. Sage and Glow is excluded; all ten explicitly listed repositories are included. The user authorized this merge into `preview/seo-foundations-20261006`. Non-Wix production branches are unchanged; Wix publishing remains a separate step. Page layouts, colours, images and content are preserved.
 
 ## Search changes
 
-Added social imagery, favicon and custom 404; removed artificial changing sitemap dates; prepared the intended goldenhouraesthetics.co.uk canonical domain and disabled indexing until SITE_INDEXABLE=true is set for the live production domain.
+Social imagery and favicon metadata, stable sitemap entries and launch indexing control for the intended goldenhouraesthetics.co.uk domain. Existing page design retained.
 
 ## Verification
 
@@ -25,10 +25,10 @@ Production build passed; generated HTML/XML checks passed.
 | 9 | Sitemap + robots.txt | robots.txt: 200 text/plain; charset=utf-8; sitemap.xml: 200 application/xml | Added real crawl endpoints/files or corrected the domain; previews remain blocked until configured. | Recheck XML/text content types and all listed URLs after merge/deploy. |
 | 10 | Alt text on images | No missing alt attributes in the mobile homepage samples. | New code uses text-only fallback or labelled brand assets. | A full multi-page accessibility review is still needed; decorative images and meaningful alternative text require human judgment. |
 | 11 | Compress images | 0 repository images above 500 KB (500 KB is an audit flag, not a pass/fail standard). | Existing image assets reused; this PR does not batch-reencode them. | Review largest rendered images and responsive sizing. Remote Wix images need delivery-size measurements. |
-| 12 | Check page load speed | Homepage response took 0.58 s in one request; this is not a Lighthouse or Core Web Vitals score. | Initial HTML content prepared for the client-only sites. | Run desktop/mobile Lighthouse and field Core Web Vitals after publication; review large images, fonts and any intro animation. |
-| 13 | Fix colour contrast | Visual homepage sample reviewed; no full contrast certification. | No colour change. | Measure all normal, hover, focus, disabled and image-overlay text states before calling this complete. |
+| 12 | Check page load speed | Homepage response took 0.58 s in one request; this is not a Lighthouse or Core Web Vitals score. | Existing content and loading appearance preserved. | Run desktop/mobile Lighthouse and field Core Web Vitals after publication; review large images, fonts and any intro animation. |
+| 13 | Fix colour contrast | Visual homepage sample reviewed; no full contrast certification. | No colour change: existing appearance preserved. | Measure all normal, hover, focus, disabled and image-overlay text states before calling this complete. |
 | 14 | Mobile friendly | Phone-sized homepage reviewed at 390 × 844; no document-level horizontal overflow in the sample. | No broad redesign; primary mobile journeys retained. | Homepage sampling is not a full responsive audit. |
-| 15 | Custom 404 page | HTTP 404 observed; generic/default missing-page presentation. | Added custom missing-page view; changed soft-404 routing/status where applicable. | Verify real HTTP 404 after publication, especially Wix catch-all routes and Vercel static clean URLs. |
+| 15 | Custom 404 page | HTTP 404 observed; generic/default missing-page presentation. | Existing missing-page design preserved. Metadata/status handling updated where applicable. | Verify real HTTP 404 after publication, especially Wix catch-all routes and Vercel static clean URLs. |
 | 16 | Fix broken links | Known crawl-file failures or wrong canonical destinations found; primary homepage navigation reviewed. | Fixed crawl endpoints, canonical destinations, clean route links and the Sophellie HTTP booking link where applicable. | Full link crawl and external booking/social destination checks remain; policy links require real pages. |
 | 17 | Form validation | No on-site form in reviewed pages; enquiries/booking use external routes. | Preserved existing form/cart implementation. | External booking/payment-provider validation is outside this repository audit. |
 | 18 | Spam protection | No on-site enquiry form; external services handle the action. | No new CAPTCHA/provider configured. | Not applicable to on-site forms; external service controls were not tested. |
@@ -37,10 +37,6 @@ Production build passed; generated HTML/XML checks passed.
 
 ## AI-search scope
 
-The foundations are crawlable routes, readable initial HTML, accurate page metadata, consistent business identity and truthful structured data. Universal robots rules permit ordinary search crawling on launched sites. Structured data is not a promise of AI recommendations or rich results. Full CMS catalogue/article rendering, Search Console, Business Profiles, Merchant Center, analytics and field performance remain separate verification steps.
+This merge covers crawl routing, accurate metadata, consistent business identity and factual structured data. Full initial HTML content is available on the existing Next.js/static sites and prerendered on Website Mill. Wix keeps its existing client-rendered content and requires further server-readable content work. Universal robots rules permit ordinary search crawling on launched sites. Structured data is not a promise of AI recommendations or rich results. Full CMS catalogue/article rendering, Search Console, Business Profiles, Merchant Center, analytics and field performance remain separate verification steps.
 
 Google guidance: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
-
-## Final routing and appearance constraint
-
-The user authorized preview branches for the seven non-Wix repositories and main branches for the three Wix repositories. The final changes preserve existing appearance. Colour adjustments, added custom error-page designs and visible Wix loading summaries were removed before merging. Wix page content continues to render through the existing client application; full server-readable CMS content remains future work. Metadata, structured data, canonical URLs, crawl endpoints and launch indexing controls remain in scope. The earlier checklist records proposed work, so this final scope note supersedes any earlier reference to those removed visual changes.
