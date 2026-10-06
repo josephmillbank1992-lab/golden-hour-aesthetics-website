@@ -28,7 +28,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: { icon: "/images/golden-hour-logo-transparent.png" },
+  twitter: { card: "summary_large_image", images: ["/images/golden-hour-logo.png"] },
   openGraph: {
+    images: [{ url: "/images/golden-hour-logo.png", alt: "Golden Hour Aesthetics" }],
     title: "Golden Hour Aesthetics",
     description:
       "Natural results, honest advice and client safety at the heart of every treatment.",
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   robots: {
-    index: true,
+    index: process.env.SITE_INDEXABLE === "true",
     follow: true,
   },
 };
