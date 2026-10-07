@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Italiana, Manrope } from "next/font/google";
+import { Lora, Manrope } from "next/font/google";
 
 import "./globals.css";
 
-const displayFont = Italiana({
+const displayFont = Lora({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
 });
 
 const bodyFont = Manrope({
