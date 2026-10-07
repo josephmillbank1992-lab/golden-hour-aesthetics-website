@@ -92,11 +92,20 @@ export default function HomePage() {
 
           <figure className="hero-visual">
             <Image
-              src="/images/instagram-clinic-consultation.jpg"
-              alt="Jess welcoming a client in the Golden Hour treatment room"
+              className="hero-image hero-image--desktop"
+              src="/images/hero-clinic-wide.jpg"
+              alt="Golden Hour Aesthetics treatment room with branded wall and treatment chair"
               fill
               priority
-              sizes="(max-width: 850px) 100vw, 55vw"
+              sizes="100vw"
+            />
+            <Image
+              className="hero-image hero-image--mobile"
+              src="/images/hero-clinic-mobile.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
             />
             <figcaption>
               <Sparkle />

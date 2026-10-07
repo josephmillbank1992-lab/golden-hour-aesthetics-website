@@ -54,7 +54,9 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); }
 .hero .text-link { padding-block: 0.8rem 0.55rem; border-bottom: 1px solid currentColor; }
 .booking-note { margin: 1rem 0 0; color: rgba(251, 250, 247, 0.62); font-size: 0.8rem; }
 .hero-visual { position: absolute; inset: 0; margin: 0; }
-.hero-visual img { object-fit: cover; object-position: center 46%; }
+.hero-image { object-fit: cover; }
+.hero-image--desktop { object-position: center 48%; }
+.hero-image--mobile { display: none; object-position: center 42%; }
 .hero-visual figcaption { position: absolute; right: var(--page); bottom: 2rem; z-index: 3; display: flex; gap: 0.8rem; align-items: center; max-width: 21rem; color: rgba(251, 250, 247, 0.82); }
 .hero-visual figcaption p { margin: 0; font-size: 0.78rem; line-height: 1.45; }
 
@@ -162,7 +164,8 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); }
   .hero-copy { align-self: flex-end; }
   .hero h1 { font-size: clamp(2.35rem, 10.5vw, 3rem); }
   .hero-summary { font-size: 0.98rem; }
-  .hero-visual img { object-position: 20% center; }
+  .hero-image--desktop { display: none; }
+  .hero-image--mobile { display: block; }
   .hero-visual figcaption { display: none; }
   .trust-strip { grid-template-columns: repeat(2, 1fr); }
   .trust-strip span:nth-child(-n + 2) { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
