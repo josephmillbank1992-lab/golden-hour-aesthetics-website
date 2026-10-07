@@ -78,8 +78,8 @@ export default function HomePage() {
               <em>Beautifully you.</em>
             </h1>
             <p className="hero-summary">
-              Natural, evidence-based treatments with honest advice and
-              thoughtful aftercare.
+              Natural, evidence-based treatments, where safety is the priority,
+              advice is honest, and aftercare is supportive.
             </p>
             <div className="hero-actions">
               <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
