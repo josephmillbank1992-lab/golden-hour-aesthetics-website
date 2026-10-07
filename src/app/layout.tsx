@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
-import { Lora, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 
 import "./globals.css";
-
-const displayFont = Lora({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
-});
 
 const bodyFont = Manrope({
   variable: "--font-body",
@@ -51,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB">
-      <body className={`${displayFont.variable} ${bodyFont.variable}`}>
+      <body className={bodyFont.variable}>
         {children}
       </body>
     </html>

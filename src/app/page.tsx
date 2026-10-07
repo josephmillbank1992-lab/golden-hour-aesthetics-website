@@ -18,14 +18,10 @@ function BrandMark({ light = false }: { light?: boolean }) {
   return (
     <span className={`brand-mark ${light ? "brand-mark--light" : ""}`}>
       <Image
-        src={
-          light
-            ? "/images/golden-hour-logo-reverse.png"
-            : "/images/golden-hour-logo-transparent.png"
-        }
+        src="/images/golden-hour-logo-transparent.png"
         alt="Golden Hour Aesthetics"
-        width={light ? 1080 : 448}
-        height={light ? 1350 : 339}
+        width={448}
+        height={339}
         priority
       />
     </span>
@@ -33,7 +29,7 @@ function BrandMark({ light = false }: { light?: boolean }) {
 }
 
 function Sparkle() {
-  return <span className="sparkle" aria-hidden="true">✦</span>;
+  return <span className="accent-mark" aria-hidden="true" />;
 }
 
 export default function HomePage() {
@@ -60,7 +56,7 @@ export default function HomePage() {
 
       <header className="site-header">
         <a className="header-brand" href="#top" aria-label="Golden Hour Aesthetics home">
-          <BrandMark />
+          <BrandMark light />
         </a>
         <nav className="main-navigation" aria-label="Main navigation">
           {navigationItems.map((item) => (
