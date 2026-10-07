@@ -110,10 +110,19 @@ export default function HomePage() {
             ) : null}
           </div>
 
-          <aside className="hero-note" aria-label="Golden Hour approach">
-            <span className="hero-note-number">01</span>
-            <p>No pressure.<br />No over-treatment.<br />Just considered care.</p>
-          </aside>
+          <figure className="hero-visual">
+            <Image
+              src="/images/instagram-clinic-consultation.jpg"
+              alt="Jess welcoming a client in the Golden Hour treatment room"
+              fill
+              priority
+              sizes="(max-width: 850px) 100vw, 32vw"
+            />
+            <figcaption>
+              <span>01</span>
+              <p>No pressure. No over-treatment. Just considered care.</p>
+            </figcaption>
+          </figure>
 
           <div className="hero-treatments" aria-label="Available treatments">
             {treatments.map((treatment) => (
@@ -140,6 +149,15 @@ export default function HomePage() {
               without pressure.
             </p>
           </div>
+          <figure className="introduction-image">
+            <Image
+              src="/images/instagram-gift-vouchers.jpg"
+              alt="Golden Hour Aesthetics branded gift vouchers"
+              fill
+              sizes="(max-width: 850px) 100vw, 24vw"
+            />
+            <figcaption>Golden Hour · In real life</figcaption>
+          </figure>
         </section>
 
         <section className="treatments-section" id="treatments">
@@ -151,6 +169,16 @@ export default function HomePage() {
               deposits and availability remain in the booking platform.
             </p>
           </div>
+
+          <figure className="treatment-visual">
+            <Image
+              src="/images/treatment-still-life.png"
+              alt="Editorial still life of a carefully prepared treatment setting"
+              fill
+              sizes="(max-width: 850px) 100vw, 92vw"
+            />
+            <figcaption>Prepared with care · Consultation-led treatment</figcaption>
+          </figure>
 
           <div className="treatment-list">
             {treatments.map((treatment) => (
@@ -167,12 +195,16 @@ export default function HomePage() {
         </section>
 
         <section className="about-section" id="about">
-          <div className="about-card" aria-label="Portrait placeholder for Jess">
-            <div className="portrait-placeholder">
-              <span>Portrait of Jess</span>
-              <small>Approved photography to be added</small>
-            </div>
-            <p>Founder · Aesthetic practitioner</p>
+          <div className="about-card">
+            <figure className="about-image">
+              <Image
+                src="/images/instagram-jess-in-clinic.jpg"
+                alt="Jess inside the Golden Hour Aesthetics clinic"
+                fill
+                sizes="(max-width: 850px) 100vw, 31vw"
+              />
+            </figure>
+            <p>Listen first · Personalised care</p>
           </div>
 
           <div className="about-copy">
