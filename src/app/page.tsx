@@ -296,6 +296,16 @@ export default function HomePage() {
         </div>
         <div className="footer-legal">
           <p>© {new Date().getFullYear()} Golden Hour Aesthetics by Jess.</p>
+          <p>
+            Website designed &amp; built by{" "}
+            <a
+              href="https://thewebsitemill.co.uk"
+              target="_blank"
+              rel="noreferrer"
+            >
+              The Website Mill ↗
+            </a>
+          </p>
           <p>All treatments are subject to consultation and suitability.</p>
         </div>
       </footer>

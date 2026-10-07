@@ -146,6 +146,8 @@ h2 { font-size: clamp(2.2rem, 4vw, 4rem); }
 .footer-contact a, .footer-social a, .footer-social span { display: block; margin-bottom: 0.55rem; color: rgba(251, 250, 247, 0.72); font-size: 0.82rem; overflow-wrap: anywhere; text-decoration: none; }
 .footer-legal { display: flex; grid-column: 1 / -1; justify-content: space-between; gap: 2rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.14); color: rgba(251, 250, 247, 0.42); font-size: 0.67rem; }
 .footer-legal p { margin: 0; }
+.footer-legal a { color: rgba(251, 250, 247, 0.72); text-decoration: none; }
+.footer-legal a:hover { color: var(--chalk); }
 
 @media (max-width: 1000px) {
   .site-header { grid-template-columns: 1fr auto; }
