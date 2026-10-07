@@ -168,7 +168,7 @@ export default function HomePage() {
           <div className="about-portrait-wrap">
             <figure className="about-portrait">
               <Image
-                src="/images/instagram-jess-in-clinic.jpg"
+                src="/images/jess-portrait.jpg"
                 alt="Jess inside the Golden Hour Aesthetics clinic"
                 fill
                 sizes="(max-width: 850px) 100vw, 42vw"
