@@ -220,15 +220,25 @@ export default function HomePage() {
             <p className="eyebrow">Real clients, real results</p>
             <h2>Subtle changes.<br />Confident smiles.</h2>
             <p>
-              Client photography will be shared with consent. Results vary and
-              every treatment requires consultation.
+              Client photography only shared with consent. Results vary with each
+              individual, a thorough consultation is always carried out before
+              treatment begins.
             </p>
             <ButtonLink href={siteConfig.booking.url} variant="outline">Discuss your goals</ButtonLink>
           </div>
-          <div className="results-visual" aria-hidden="true">
-            <span>Before</span><Sparkle /><span>After</span>
-            <p>Approved client imagery coming soon</p>
-          </div>
+          <figure className="results-visual">
+            <Image
+              src="/images/client-before-after.jpg"
+              alt="Before and after client treatment comparison, shared with consent"
+              fill
+              sizes="(max-width: 760px) 100vw, 50vw"
+            />
+            <div className="results-labels" aria-hidden="true">
+              <span>Before</span>
+              <span>After</span>
+            </div>
+            <figcaption>Client image shared with consent</figcaption>
+          </figure>
         </section>
 
         <section className="reviews-section" id="reviews">
