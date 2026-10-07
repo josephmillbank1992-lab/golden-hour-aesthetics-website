@@ -20,8 +20,8 @@ function BrandMark({ light = false }: { light?: boolean }) {
       <Image
         src="/images/golden-hour-logo-transparent.png"
         alt="Golden Hour Aesthetics"
-        width={448}
-        height={339}
+        width={424}
+        height={315}
         priority
       />
     </span>
