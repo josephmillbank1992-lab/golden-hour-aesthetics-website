@@ -73,10 +73,13 @@ export default function HomePage() {
         <section className="hero" id="top">
           <div className="hero-copy">
             <p className="eyebrow"><Sparkle /> Ethical aesthetics in Darley Abbey</p>
-            <h1>Natural results,<br /><em>beautifully you.</em></h1>
+            <h1>
+              <span>Natural results.</span>
+              <em>Beautifully you.</em>
+            </h1>
             <p className="hero-summary">
-              Personalised, evidence-based treatments delivered with warmth,
-              honesty and your safety at the heart of every appointment.
+              Natural, evidence-based treatments with honest advice and
+              thoughtful aftercare.
             </p>
             <div className="hero-actions">
               <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
@@ -116,13 +119,8 @@ export default function HomePage() {
           </div>
           <div className="welcome-copy">
             <p>
-              Every appointment begins with a conversation. Jess takes time to
-              understand what you want, explain your options and create a plan
-              that feels considered rather than rushed.
-            </p>
-            <p>
-              The focus is always on subtle, balanced results and a calm,
-              comfortable experience from consultation through to aftercare.
+              Jess listens, explains your options and builds a treatment plan
+              around you. The aim is simple: subtle results and a calm experience.
             </p>
           </div>
           <figure className="welcome-detail">
@@ -139,7 +137,7 @@ export default function HomePage() {
           <div className="section-heading section-heading--centered">
             <p className="eyebrow">Treatments</p>
             <h2>Made personal to you.</h2>
-            <p>Thoughtful options for natural enhancement and healthier-looking skin.</p>
+            <p>Natural enhancement and healthier-looking skin.</p>
           </div>
           <div className="treatment-layout">
             <figure className="treatment-image">
@@ -182,16 +180,9 @@ export default function HomePage() {
             <p className="eyebrow">Meet Jess</p>
             <h2>Friendly, honest care—with no pressure.</h2>
             <p>
-              I’m Jess, founder of Golden Hour Aesthetics. I have more than 10
-              years’ experience across physical and mental healthcare and I’m
-              currently completing my BSc (Hons) in Adult Nursing at the
-              University of Derby.
-            </p>
-            <p>
-              I began training in aesthetics around three years ago and continue
-              to develop through specialist training, conferences and ongoing
-              professional development. If I do not believe a treatment is right
-              for you, I will always be honest about it.
+              I’m Jess. I have more than 10 years’ healthcare experience, around
+              three years in aesthetics and I’m completing my BSc (Hons) in Adult
+              Nursing. My approach is natural, honest and safety-led.
             </p>
             <div className="about-facts">
               <span>Natural approach</span><span>Ongoing development</span><span>Ethical advice</span>
@@ -220,9 +211,8 @@ export default function HomePage() {
             <p className="eyebrow">Real clients, real results</p>
             <h2>Subtle changes.<br />Confident smiles.</h2>
             <p>
-              Before and after photography will be shared here with client
-              consent. Every result is individual and every treatment begins
-              with a suitability assessment.
+              Client photography will be shared with consent. Results vary and
+              every treatment requires consultation.
             </p>
             <ButtonLink href={siteConfig.booking.url} variant="outline">Discuss your goals</ButtonLink>
           </div>
@@ -268,7 +258,7 @@ export default function HomePage() {
             <h2>Let’s talk about what feels right for you.</h2>
           </div>
           <div>
-            <p>No pressure. No one-size-fits-all plan. Just honest, personalised advice.</p>
+            <p>Honest advice. Personal treatment.</p>
             <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
           </div>
         </section>

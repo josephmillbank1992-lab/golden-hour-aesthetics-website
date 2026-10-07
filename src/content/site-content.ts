@@ -28,49 +28,41 @@ export const treatments = [
   {
     number: "01",
     name: "Dermal Fillers",
-    description:
-      "Thoughtful treatments designed to enhance your natural features while preserving balance, movement and proportion.",
+    description: "Balanced enhancement that works with your natural features.",
   },
   {
     number: "02",
     name: "Botulinum Toxin",
-    description:
-      "Personalised treatment plans informed by a careful assessment of your features, movement and individual goals.",
+    description: "A tailored approach guided by your features and movement.",
   },
   {
     number: "03",
     name: "Skin Boosters",
-    description:
-      "Injectable skin treatments selected to support hydration, luminosity and overall skin quality from within.",
+    description: "Hydration and luminosity for healthier-looking skin.",
   },
   {
     number: "04",
     name: "Polynucleotides",
-    description:
-      "Regenerative treatments that support skin quality and a rested, refreshed appearance with subtle results.",
+    description: "Regenerative support for rested, refreshed-looking skin.",
   },
 ];
 
 export const reasons = [
   {
     title: "Safety comes first",
-    description:
-      "Clear consultation, careful assessment and thoughtful aftercare are central to every client experience.",
+    description: "Careful assessment and clear aftercare at every appointment.",
   },
   {
     title: "Natural by design",
-    description:
-      "Treatment plans are shaped around you, with subtle and balanced results always taking priority.",
+    description: "Subtle, balanced results shaped around you.",
   },
   {
     title: "Honest, ethical advice",
-    description:
-      "If a treatment is not right for you, Jess will say so and help you understand the alternatives.",
+    description: "Straightforward advice—even when treatment is not the answer.",
   },
   {
     title: "Evidence-led care",
-    description:
-      "Established treatments, ongoing specialist training and a healthcare-informed approach guide every decision.",
+    description: "Established treatments supported by continued specialist training.",
   },
 ];
 
