@@ -267,7 +267,7 @@ export default function HomePage() {
           </div>
           <div className="visit-brand">
             <BrandMark light />
-            <p>Private appointments · Warm welcome · Thoughtful aftercare</p>
+            <p>Private appointments · Warm welcome · Attentive aftercare</p>
           </div>
         </section>
 
