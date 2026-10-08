@@ -64,7 +64,7 @@ export default function HomePage() {
           ))}
         </nav>
         <a className="header-booking" href={siteConfig.booking.url}>
-          {siteConfig.booking.isConfigured ? "Book now" : "Enquire"}
+          Book an appointment
           <span aria-hidden="true">↗</span>
         </a>
       </header>
@@ -85,9 +85,6 @@ export default function HomePage() {
               <ButtonLink href={siteConfig.booking.url}>{siteConfig.booking.label}</ButtonLink>
               <a className="text-link" href="#treatments">View treatments</a>
             </div>
-            {!siteConfig.booking.isConfigured ? (
-              <p className="booking-note">Online booking is coming soon. Email enquiries are open.</p>
-            ) : null}
           </div>
 
           <figure className="hero-visual">
@@ -164,8 +161,8 @@ export default function HomePage() {
                   <span className="treatment-number">{treatment.number}</span>
                   <h3>{treatment.name}</h3>
                   <p>{treatment.description}</p>
-                  <a href={siteConfig.booking.url} aria-label={`Enquire about ${treatment.name}`}>
-                    Ask about this treatment <span aria-hidden="true">→</span>
+                  <a href={siteConfig.booking.url} aria-label={`Book ${treatment.name}`}>
+                    Book this treatment <span aria-hidden="true">→</span>
                   </a>
                 </article>
               ))}
@@ -224,7 +221,7 @@ export default function HomePage() {
               individual, a thorough consultation is always carried out before
               treatment begins.
             </p>
-            <ButtonLink href={siteConfig.booking.url} variant="outline">Discuss your goals</ButtonLink>
+            <ButtonLink href={siteConfig.booking.url} variant="outline">Book an appointment</ButtonLink>
           </div>
           <figure className="results-visual">
             <Image

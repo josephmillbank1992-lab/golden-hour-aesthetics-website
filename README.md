@@ -34,7 +34,7 @@ Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local`:
 NEXT_PUBLIC_BOOKING_URL=https://your-booking-platform.example.com
 ```
 
-Until this is set, booking buttons open a pre-addressed email enquiry and the hero clearly says that online booking is being prepared. This avoids presenting the booking platform as live before it is ready.
+Until this is set, booking buttons use the intended Golden Hour booking address at `https://book.goldenhouraesthetics.co.uk/book`. Configure the environment variable before launch if the production booking address changes.
 
 The fallback behaviour and button wording are in `src/content/site-config.ts`.
 

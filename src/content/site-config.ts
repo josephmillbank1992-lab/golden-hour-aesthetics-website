@@ -1,5 +1,3 @@
-import { businessDetails } from "./site-content";
-
 function readPublicUrl(value: string | undefined) {
   return value?.trim() ?? "";
 }
@@ -8,15 +6,13 @@ const configuredBookingUrl = readPublicUrl(
   process.env.NEXT_PUBLIC_BOOKING_URL,
 );
 
+const bookingUrl =
+  configuredBookingUrl || "https://book.goldenhouraesthetics.co.uk/book";
+
 export const siteConfig = {
   booking: {
-    isConfigured: Boolean(configuredBookingUrl),
-    url:
-      configuredBookingUrl ||
-      `mailto:${businessDetails.email}?subject=Appointment enquiry`,
-    label: configuredBookingUrl
-      ? "Book an appointment"
-      : "Enquire about an appointment",
+    url: bookingUrl,
+    label: "Book an appointment",
   },
   social: {
     instagramUrl: readPublicUrl(process.env.NEXT_PUBLIC_INSTAGRAM_URL),
