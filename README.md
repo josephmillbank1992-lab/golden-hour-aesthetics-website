@@ -34,7 +34,7 @@ Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local`:
 NEXT_PUBLIC_BOOKING_URL=https://your-booking-platform.example.com
 ```
 
-Until this is set, booking buttons use the intended Golden Hour booking address at `https://book.goldenhouraesthetics.co.uk/book`. Configure the environment variable before launch if the production booking address changes.
+Until this is set, booking buttons use Jess's existing ANS booking workflow. Set the environment variable to `https://book.goldenhouraesthetics.co.uk/book` only after the replacement platform has passed live payment and notification testing.
 
 The fallback behaviour and button wording are in `src/content/site-config.ts`.
 
