@@ -2,7 +2,10 @@
 
 A one-page marketing website for Golden Hour Aesthetics by Jess in Darley Abbey, Derby.
 
-The website is deliberately separate from the booking platform. It introduces the clinic, treatments and brand, then sends clients to a configurable external booking URL. Prices, deposits, appointment lengths and live availability belong in the booking platform and should not be duplicated here.
+The website is deliberately separate from the booking platform. It introduces
+the clinic, treatments and brand, then opens the independently deployed booking
+journey at `/book`. Prices, deposits, appointment lengths and live availability
+belong in the booking platform and should not be duplicated here.
 
 ## Run the website locally
 
@@ -28,13 +31,19 @@ The website is deliberately separate from the booking platform. It introduces th
 
 ### Booking URL
 
-Set `NEXT_PUBLIC_BOOKING_URL` in `.env.local`:
+The live site keeps the booking journey on the clinic domain at `/book` and
+proxies that path to the separate booking application. Configure both values in
+`.env.local`:
 
 ```text
-NEXT_PUBLIC_BOOKING_URL=https://your-booking-platform.example.com
+NEXT_PUBLIC_BOOKING_URL=/book
+BOOKING_BACKEND_URL=https://golden-hour-booking-alpha.vercel.app
 ```
 
-Until this is set, booking buttons use Jess's existing ANS booking workflow. Set the environment variable to `https://book.goldenhouraesthetics.co.uk/book` only after the replacement platform has passed live payment and notification testing.
+`NEXT_PUBLIC_BOOKING_URL` controls every public booking button.
+`BOOKING_BACKEND_URL` is server-only and points to the independently deployed
+booking application. Prices, deposits, durations and availability continue to
+come from the booking database, not this website.
 
 The fallback behaviour and button wording are in `src/content/site-config.ts`.
 
@@ -81,8 +90,8 @@ Website images live in `public/images`.
 - `public/images/golden-hour-logo.png` is the dark Canva logo export.
 - `public/images/golden-hour-logo-transparent.png` is the tightly cropped transparent header logo.
 - `public/images/golden-hour-logo-reverse.png` is the white-on-taupe Canva logo export.
-- The “Meet Jess” area is intentionally a styled placeholder. Replace the placeholder inside the `about` section in `src/app/page.tsx` with an approved portrait using Next.js `Image`.
-- The before-and-after cards are styled placeholders. Replace them only with approved client photography and recorded consent.
+- `public/images/jess-portrait.jpg` is Jess's approved portrait.
+- `public/images/client-before-after.jpg` is the approved client comparison.
 
 When adding a photo, keep a descriptive `alt` value unless the image is purely decorative.
 

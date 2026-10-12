@@ -8,7 +8,7 @@ const configuredBookingUrl = readPublicUrl(
 
 const bookingUrl =
   configuredBookingUrl ||
-  "https://portal.aestheticnursesoftware.com/book-online/30984";
+  "/book";
 
 export const siteConfig = {
   booking: {
