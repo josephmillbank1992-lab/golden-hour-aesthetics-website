@@ -45,6 +45,11 @@ BOOKING_BACKEND_URL=https://golden-hour-booking-alpha.vercel.app
 booking application. Prices, deposits, durations and availability continue to
 come from the booking database, not this website.
 
+The private owner entry point is `/owner`. It opens the booking platform's
+secure email, password and MFA sign-in flow. Supporting authentication and
+admin routes are also proxied through the clinic domain so the owner does not
+need to use the internal Vercel address.
+
 The fallback behaviour and button wording are in `src/content/site-config.ts`.
 
 ### Social links

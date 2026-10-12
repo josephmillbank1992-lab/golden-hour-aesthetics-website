@@ -19,6 +19,34 @@ const nextConfig: NextConfig = {
         destination: `${bookingBackendUrl}/book`,
       },
       {
+        source: "/owner",
+        destination: `${bookingBackendUrl}/login`,
+      },
+      {
+        source: "/login",
+        destination: `${bookingBackendUrl}/login`,
+      },
+      {
+        source: "/mfa",
+        destination: `${bookingBackendUrl}/mfa`,
+      },
+      {
+        source: "/forgot-password",
+        destination: `${bookingBackendUrl}/forgot-password`,
+      },
+      {
+        source: "/reset-password",
+        destination: `${bookingBackendUrl}/reset-password`,
+      },
+      {
+        source: "/admin",
+        destination: `${bookingBackendUrl}/admin`,
+      },
+      {
+        source: "/auth/:path*",
+        destination: `${bookingBackendUrl}/auth/:path*`,
+      },
+      {
         source: "/booking/:path*",
         destination: `${bookingBackendUrl}/booking/:path*`,
       },
