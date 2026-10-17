@@ -8,7 +8,7 @@ const configuredBookingUrl = readPublicUrl(
 
 const bookingUrl =
   configuredBookingUrl ||
-  "/book";
+  "https://www.goldenhouraesthetics.co.uk/book";
 
 export const siteConfig = {
   booking: {

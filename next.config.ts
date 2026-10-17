@@ -8,6 +8,18 @@ const bookingBackendUrl = (
 const nextConfig: NextConfig = {
   agentRules: false,
   reactStrictMode: true,
+  async redirects() {
+    // Old shared website links must bring visitors onto the clinic's own domain.
+    return [
+      "golden-hour-aesthetics-website.vercel.app",
+      "golden-hour-aesthetics-website-joseph-millbanks-projects.vercel.app",
+    ].map((host) => ({
+      source: "/:path*",
+      has: [{ type: "host" as const, value: host }],
+      destination: "https://www.goldenhouraesthetics.co.uk/:path*",
+      permanent: true,
+    }));
+  },
   async rewrites() {
     return [
       {
